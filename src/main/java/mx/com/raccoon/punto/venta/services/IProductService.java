@@ -1,8 +1,10 @@
 package mx.com.raccoon.punto.venta.services;
 
-import mx.com.raccoon.punto.venta.models.product.ProductIn;
+import mx.com.raccoon.punto.venta.models.entities.product.Product;
 
 public interface IProductService {
 
-    void guardarProducto(ProductIn producto);
+    void guardarProducto(Product producto);
+
+    Product busquedaPorCodigo(Long code);
 }
