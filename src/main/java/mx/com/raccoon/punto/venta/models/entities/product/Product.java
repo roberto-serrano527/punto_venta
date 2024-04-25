@@ -1,8 +1,13 @@
 package mx.com.raccoon.punto.venta.models.entities.product;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Table(name = "products")
+@Setter
+@Getter
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,6 +17,7 @@ public class Product {
     @Column(name = "product_type")
     private String productType;
     private String name;
+    @Column(unique = true)
     private Long code;
     @Column(name = "category_id")
     private String categoryId;
