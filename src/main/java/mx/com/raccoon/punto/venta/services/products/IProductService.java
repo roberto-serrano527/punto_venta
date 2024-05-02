@@ -1,6 +1,6 @@
-package mx.com.raccoon.punto.venta.services;
+package mx.com.raccoon.punto.venta.services.products;
 
-import mx.com.raccoon.punto.venta.models.entities.product.Product;
+import mx.com.raccoon.punto.venta.models.entities.Product;
 
 import java.util.Map;
 

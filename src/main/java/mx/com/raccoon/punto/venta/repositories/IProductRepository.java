@@ -1,6 +1,6 @@
 package mx.com.raccoon.punto.venta.repositories;
 
-import mx.com.raccoon.punto.venta.models.entities.product.Product;
+import mx.com.raccoon.punto.venta.models.entities.Product;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;

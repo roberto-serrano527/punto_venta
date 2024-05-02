@@ -1,7 +1,7 @@
-package mx.com.raccoon.punto.venta.services;
+package mx.com.raccoon.punto.venta.services.products;
 
 import lombok.extern.slf4j.Slf4j;
-import mx.com.raccoon.punto.venta.models.entities.product.Product;
+import mx.com.raccoon.punto.venta.models.entities.Product;
 import mx.com.raccoon.punto.venta.repositories.IProductRepository;
 import org.springframework.stereotype.Service;
 
@@ -11,9 +11,9 @@ import java.util.Optional;
 
 @Service
 @Slf4j
-public class ProductService implements IProductService{
+public class ProductService implements IProductService {
 
-    IProductRepository repository;
+    private final IProductRepository repository;
 
     public ProductService(IProductRepository repository) {
         this.repository = repository;
