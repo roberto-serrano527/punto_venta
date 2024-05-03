@@ -1,7 +1,7 @@
 package mx.com.raccoon.punto.venta.services.categories;
 
 import mx.com.raccoon.punto.venta.models.entities.Category;
-import mx.com.raccoon.punto.venta.repositories.categories.ICategoryRepository;
+import mx.com.raccoon.punto.venta.repositories.ICategoryRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
