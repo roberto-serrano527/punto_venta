@@ -18,9 +18,7 @@ public class Category {
     @Column(name = "father_category")
     private String fatherCategory;
 
-    @Column(name = "box_id")
-    private Integer boxId;
-
     private String description;
+
     private boolean status;
 }
