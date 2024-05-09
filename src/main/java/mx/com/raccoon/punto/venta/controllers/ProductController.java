@@ -1,6 +1,7 @@
 package mx.com.raccoon.punto.venta.controllers;
 
 import jakarta.validation.Valid;
+import mx.com.raccoon.punto.venta.models.ProductModel;
 import mx.com.raccoon.punto.venta.models.entities.Product;
 import mx.com.raccoon.punto.venta.services.products.IProductService;
 import org.springframework.http.HttpStatus;
@@ -19,7 +20,7 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity<?> crear(@Valid @RequestBody Product product, BindingResult result){
+    public ResponseEntity<?> crear(@Valid @RequestBody ProductModel product, BindingResult result){
         return new ResponseEntity<>(service.guardarProducto(product), HttpStatus.CREATED);
     }
 

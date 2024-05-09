@@ -1,67 +1,47 @@
-package mx.com.raccoon.punto.venta.models.entities;
+package mx.com.raccoon.punto.venta.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
-@Table(name = "products")
 @Setter
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
-public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ProductModel {
+
     private Integer id;
 
-    @Column(name = "employee_id")
     @NotNull
     private Integer employeeId;
 
-    @Column(name = "product_type")
     @NotEmpty
     private String productType;
 
     @NotEmpty
     private String name;
 
-    @Column(unique = true)
     @NotNull
     private Long code;
 
-    @ManyToOne
-    @JoinColumn(name = "categories")
     @NotNull
-    private Category category;
+    private Long categoryId;
 
-    @ManyToOne
-    @JoinColumn(name = "suppliers")
     @NotNull
-    private Supplier supplier;
+    private Long supplierId;
 
-    @ManyToOne
-    @JoinColumn(name = "brands")
     @NotNull
-    private Brand brand;
+    private Long brandId;
 
-    @Column(name = "barcode_type")
     @NotEmpty
     private String barcodeType;
 
-    @ManyToOne
-    @JoinColumn(name = "boxes")
     @NotNull
-    private Box box;
+    private Long boxId;
 
-    @ManyToOne
-    @JoinColumn(name = "units")
+    @Column(name = "unit_id")
     @NotNull
-    private Unit unit;
+    private Long unitId;
 
     @NotNull
     private Double price;

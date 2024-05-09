@@ -14,8 +14,8 @@ INSERT INTO brands (name, short_name, description, status)
     VALUES ('Bimbo', 'Bimbo', 'Pan bimbo', true);
 
 --Boxes
-INSERT INTO boxes (name, short_name, description, status)
-    VALUES ('CAJA 1', 'CAJA 1', 'caja de la entrada', true);
+INSERT INTO boxes (name, description, status)
+    VALUES ('CAJA 1', 'caja de la entrada', true);
 
 --Units
 INSERT INTO units (name, description, status)

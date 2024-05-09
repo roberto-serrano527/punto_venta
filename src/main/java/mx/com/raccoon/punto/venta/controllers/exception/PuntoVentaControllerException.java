@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import mx.com.raccoon.punto.venta.controllers.exception.error.PuntoVentaServiceException;
 import mx.com.raccoon.punto.venta.utils.ErrorEnum;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -42,5 +43,10 @@ public class PuntoVentaControllerException {
     @ExceptionHandler(value = {SQLIntegrityConstraintViolationException.class})
     public ResponseEntity<?> handlerConstraintValidationException(SQLIntegrityConstraintViolationException ex){
         return ResponseEntity.badRequest().body(new PuntoVentaServiceException(ErrorEnum.PV_GEN_03, ex.getLocalizedMessage()));
+    }
+
+    @ExceptionHandler(value = {HttpMessageNotReadableException.class})
+    public ResponseEntity<?> handlerMessageNotReadableValidationException(HttpMessageNotReadableException ex){
+        return ResponseEntity.badRequest().body(new PuntoVentaServiceException(ErrorEnum.PV_GEN_01, ex.getLocalizedMessage()));
     }
 }
